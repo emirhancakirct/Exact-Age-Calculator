@@ -37,20 +37,18 @@ input.addEventListener("change", calculate = () =>{
 
 
     while(second < 0){
-        while(minute < 0){
-            minute += 60;
-            hour--;
-        }
-        while(hour < 0){
-            hour += 24;
-            day--;
-        }
-        while(month < 0){
-            month += 12;
-            year--;
-        }
         second += 60;
         minute--;  
+    }
+
+    while(minute < 0){
+        minute += 60;
+        hour--;
+    }
+
+    while(hour < 0){
+        hour += 24;
+        day--;
     }
 
     while(day < 0){
@@ -66,6 +64,13 @@ input.addEventListener("change", calculate = () =>{
             }
             month--;
     }
+
+    while(month < 0){
+        month += 12;
+        year--;
+    }
+
+
     
     years.innerText      = year;
     months.innerText     = month;
